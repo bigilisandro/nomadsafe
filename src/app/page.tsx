@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -44,9 +45,17 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen text-white">
+    <>
+      <Head>
+        <title>NomadSafe - Theft Insurance for Digital Nomads | Protect Your Devices Worldwide</title>
+        <meta name="description" content="Protect your electronic devices from theft and robbery anywhere in the world. Specialized insurance for digital nomads, remote workers, and travelers." />
+        <meta name="keywords" content="digital nomad insurance, device theft insurance, laptop insurance, camera insurance, travel insurance, electronic device protection" />
+        <link rel="canonical" href="https://nomadsafe.com" />
+      </Head>
+      
+      <div className="min-h-screen text-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black">
+      <header className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -88,7 +97,7 @@ export default function Home() {
             </svg>
           </Link>
         </div>
-      </section>
+      </header>
 
       {/* Protect What Matters Section */}
       <section className="py-16 sm:py-20 lg:py-30 bg-black">
@@ -531,6 +540,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
